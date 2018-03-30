@@ -12,6 +12,11 @@
     "verse-reference",
     "string-parsing"
   ],
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/jcuenod/ReferenceParser.git"
+  },
   "author": "James Cuénod",
   "license": "ISC",
   "devDependencies": {
