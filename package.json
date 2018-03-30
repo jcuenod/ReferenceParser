@@ -1,0 +1,37 @@
+{
+  "name": "referenceparser",
+  "version": "1.0.0",
+  "description": "Parse a verse reference string to match for a book, chapter and verse",
+  "main": "lib/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [
+    "bible",
+    "verse-reference",
+    "string-parsing"
+  ],
+  "author": "James Cuénod",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^22.2.2",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.2",
+    "typescript": "^2.8.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
