@@ -1,8 +1,8 @@
 {
   "name": "referenceparser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse a verse reference string to match for a book, chapter and verse",
-  "main": "lib/src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest"
