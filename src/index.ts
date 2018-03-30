@@ -3,14 +3,14 @@ import generousBookNames from './data/generousBookNames'
 
 interface IReferenceObject {
     book:string;
-    chapter:number;
-    verse:number;
+    chapter:number|null;
+    verse:number|null;
 }
 
 class ReferenceParser {
     private defaults:IReferenceObject
 
-    constructor({defaults = { book: "Genesis", chapter: 1, verse: 1 }}:{defaults?: IReferenceObject}={}) {
+    constructor({defaults = { book: "Genesis", chapter: null, verse: null }}:{defaults?: IReferenceObject}={}) {
         let { book, chapter, verse } = defaults
         this.defaults = { book, chapter, verse }
     }
@@ -20,8 +20,8 @@ class ReferenceParser {
 
         return matches ? {
             book: this._matchBook(matches[1]) || this.defaults.book,
-            chapter: matches.length > 1 ? +matches[2] : this.defaults.chapter,
-            verse: matches.length > 2 ? +matches[4] : this.defaults.verse
+            chapter: matches[3] ? +matches[3] : this.defaults.chapter,
+            verse: matches[5] ? +matches[5] : this.defaults.verse
         } : false
     }
 
