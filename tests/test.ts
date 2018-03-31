@@ -9,6 +9,7 @@ const basicTestCases:{ "url":string, "matchingBook":string }[] = [
     {"url": "1-Kings", "matchingBook":"1 Kings"},
     {"url": "Reges II", "matchingBook":"2 Kings"},
     {"url": "Reges_II", "matchingBook":"2 Kings"},
+    {"url": "Song Of Sol", "matchingBook":"Song of Songs"},
     {"url": "Songs Of Solomon", "matchingBook":"Song of Songs"},
     {"url": "Song Of Songs", "matchingBook":"Song of Songs"},
 ]
@@ -73,6 +74,10 @@ const bookStringTests = [
         "bookStringDistortion": (bookString) => bookString.toLowerCase()
     },
     {
+        "description": "should handle upper case test cases",
+        "bookStringDistortion": (bookString) => bookString.toUpperCase()
+    },
+    {
         "description": "should handle test cases without spaces, dashes and underscores",
         "bookStringDistortion": (bookString) => bookString.replace(/[-_\ ]/g, "")
     },
@@ -132,6 +137,24 @@ describe('ReferenceParser', () => {
                     })
                 })
             })
+        })
+    })
+    it("should parse specific test cases", () => {
+        const cases = [
+            { "case": "2 Kings 5:3", "solution": {book: "2 Kings", chapter: 5, verse: 3} },
+            { "case": "pss4.2", "solution": {book: "Psalms", chapter: 4, verse: 2} },
+            { "case": "song of sol 10", "solution": {book: "Song of Songs", chapter: 10, verse: null} },
+            { "case": "ex", "solution": {book: "Exodus", chapter: null, verse: null} },
+            { "case": "garbage", "solution": {book: null, chapter: null, verse: null} }
+        ]
+        cases.forEach(c => {
+            const s = rp.parse(c.case)
+            if (!s ||
+               (s.book !== c.solution.book ||
+                s.chapter !== c.solution.chapter ||
+                s.verse !== c.solution.verse)) {
+                    throw `Could not parse: ${c.case} as ${JSON.stringify(c.solution)}: ${JSON.stringify(s)}`
+            }
         })
     })
 })
