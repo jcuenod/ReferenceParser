@@ -1,5 +1,7 @@
 # ReferenceParser
 
+**TLDR:** Parse likely bible references from strings like "Jn3.16" or "1 Cor 13"
+
 This is a simple library designed to infer an intended verse reference given a string. It is used in url parsing by <https://parabible.com> so that users can use any book abbreviations they want to use while also providing support for a standard set of urls.
 
 ## Usage is simple
