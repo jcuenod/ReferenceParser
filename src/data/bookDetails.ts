@@ -1,4 +1,11 @@
-const bookDetails:{ "name":string, "chapters":number, "abbreviation":string, "shebanqBook":string, "bentoBook":string }[] = [
+interface IBookDetails {
+	"name":string,
+	"chapters":number,
+	"abbreviation":string,
+	"shebanqBook"?:string,
+	"bentoBook":string
+}
+const bookDetails:IBookDetails[] = [
 	{"name": "Genesis", "chapters": 50, "abbreviation": "Gen", "shebanqBook": "Genesis", "bentoBook": "Gen"},
 	{"name": "Exodus", "chapters": 40, "abbreviation": "Exod", "shebanqBook": "Exodus", "bentoBook": "Exo"},
 	{"name": "Leviticus", "chapters": 27, "abbreviation": "Lev", "shebanqBook": "Leviticus", "bentoBook": "Lev"},
