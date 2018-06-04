@@ -65,7 +65,34 @@ const generousBookNames: { [s:string]:string } = {
 	"1chronicles": "1 Chronicles",
 	"chronicai": "1 Chronicles",
 	"2chronicles": "2 Chronicles",
-	"chronicaii": "2 Chronicles"
+	"chronicaii": "2 Chronicles",
+	
+	"matthew": "Matthew",
+	"mark": "Mark",
+	"luke": "Luke",
+	"john": "John",
+	"acts": "Acts",
+	"romans": "Romans",
+	"1corinthians": "1 Corinthians",
+	"2corinthians": "2 Corinthians",
+	"galatians": "Galatians",
+	"ephesians": "Ephesians",
+	"philippians": "Philippians",
+	"colossians": "Colossians",
+	"1thessalonians": "1 Thessalonians",
+	"2thessalonians": "2 Thessalonians",
+	"1timothy": "1 Timothy",
+	"2timothy": "2 Timothy",
+	"titus": "Titus",
+	"philemon": "Philemon",
+	"hebrews": "Hebrews",
+	"james": "James",
+	"1peter": "1 Peter",
+	"2peter": "2 Peter",
+	"1john": "1 John",
+	"2john": "2 John",
+	"3john": "3 John",
+	"jude": "Jude",
+	"revelation": "Revelation"
 }
-
 export default generousBookNames
