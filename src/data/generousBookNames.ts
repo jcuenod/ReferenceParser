@@ -71,6 +71,7 @@ const generousBookNames: { [s:string]:string } = {
 	"mark": "Mark",
 	"luke": "Luke",
 	"john": "John",
+	"jn": "John",
 	"acts": "Acts",
 	"romans": "Romans",
 	"1corinthians": "1 Corinthians",

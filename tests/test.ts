@@ -146,6 +146,7 @@ describe('ReferenceParser', () => {
             { "case": "song of sol 10", "solution": {book: "Song of Songs", chapter: 10, verse: null} },
             { "case": "ex", "solution": {book: "Exodus", chapter: null, verse: null} },
             { "case": "mt", "solution": {book: "Matthew", chapter: null, verse: null} },
+            { "case": "jn8", "solution": {book: "John", chapter: 8, verse: null} },
             { "case": "1jn5#9", "solution": {book: "1 John", chapter: 5, verse: 9} },
             { "case": "1 Corinthians 13", "solution": {book: "1 Corinthians", chapter: 13, verse: null} },
             { "case": "garbage", "solution": {book: null, chapter: null, verse: null} }
