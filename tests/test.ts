@@ -1,7 +1,21 @@
 import ReferenceParser from "../src"
 const rp = new ReferenceParser()
 
-const basicTestCases:{ "url":string, "matchingBook":string }[] = [
+export interface referenceObject {
+    book:string,
+    chapter:number|null,
+    verse:number|null
+}
+export interface expectedBook {
+    url:string
+    matchingBook:string
+}
+export interface expectedReference {
+    url:string
+    refObj:referenceObject
+}
+
+const basicTestCases:expectedBook[] = [
     {"url": "Gen", "matchingBook":"Genesis"},
     {"url": "Genesis", "matchingBook":"Genesis"},
     {"url": "2 Chronicles", "matchingBook":"2 Chronicles"},
@@ -14,7 +28,7 @@ const basicTestCases:{ "url":string, "matchingBook":string }[] = [
     {"url": "Song Of Songs", "matchingBook":"Song of Songs"},
 ]
 
-const parsingTest = (parseStr:string, matchReference:{book:string, chapter:number, verse:number}) => {
+const parsingTest = (parseStr:string, matchReference:referenceObject) => {
     const parsed = rp.parse(parseStr)
     if (!parsed ||
         parsed.book !== matchReference.book ||
@@ -26,7 +40,7 @@ const parsingTest = (parseStr:string, matchReference:{book:string, chapter:numbe
     return false
 }
 
-const wellFormattedUrlWithChapter = ({url, matchingBook}) => ({
+const wellFormattedUrlWithChapter = ({url, matchingBook}:expectedBook) => ({
     url: `${url}/12`,
     refObj: {
         book: matchingBook,
@@ -34,7 +48,7 @@ const wellFormattedUrlWithChapter = ({url, matchingBook}) => ({
         verse: null
     }
 })
-const wellFormattedUrlWithChapterAndVerse = ({url, matchingBook}) => ({
+const wellFormattedUrlWithChapterAndVerse = ({url, matchingBook}:expectedBook) => ({
     url: `${url}/12#23`,
     refObj: {
         book: matchingBook,
@@ -42,7 +56,7 @@ const wellFormattedUrlWithChapterAndVerse = ({url, matchingBook}) => ({
         verse: 23
     }
 })
-const badlyFormattedUrlWithChapter = ({url, matchingBook}) => {
+const badlyFormattedUrlWithChapter = ({url, matchingBook}:expectedBook) => {
     const chapterBreaks = ["_", "-", " "]
     return chapterBreaks.map(c => ({
         url: `${url}${c}12`,
@@ -51,42 +65,48 @@ const badlyFormattedUrlWithChapter = ({url, matchingBook}) => {
             chapter: 12,
             verse: null
         }
-    }))   
+    }))
 }
-const badlyFormattedUrlWithChapterAndVerse = ({url, matchingBook}) => {
+const badlyFormattedUrlWithChapterAndVerse = ({url, matchingBook}:expectedBook) => {
     const verseBreaks = [":", "v", ".", " "]
-    return [].concat(...verseBreaks.map(v => 
+    return [].concat.apply([], verseBreaks.map(v => 
         badlyFormattedUrlWithChapter({url, matchingBook}).map(v2 => {
-            v2.url += v + 42
-            v2.refObj.verse = 42
-            return v2
+            const newRef = v2.refObj
+            return {
+                url: v2.url + v + 42,
+                refObj: {
+                    book: matchingBook,
+                    chapter: newRef.chapter,
+                    verse: 42 + 0
+                }
+            }
         })
     ))
 }
 
-const bookStringTests = [
+const bookNameTests = [
     {
         "description": "should handle basic test cases",
-        "bookStringDistortion": (bookString) => bookString
+        "bookNameDistortion": (bookName:string) => bookName
     },
     {
         "description": "should handle lower case test cases",
-        "bookStringDistortion": (bookString) => bookString.toLowerCase()
+        "bookNameDistortion": (bookName:string) => bookName.toLowerCase()
     },
     {
         "description": "should handle upper case test cases",
-        "bookStringDistortion": (bookString) => bookString.toUpperCase()
+        "bookNameDistortion": (bookName:string) => bookName.toUpperCase()
     },
     {
         "description": "should handle test cases without spaces, dashes and underscores",
-        "bookStringDistortion": (bookString) => bookString.replace(/[-_\ ]/g, "")
+        "bookNameDistortion": (bookName:string) => bookName.replace(/[-_\ ]/g, "")
     },
 ]
 
 const chapterVerseTests = [
     {
         "itDescription": "should handle reference without chapter or verse",
-        "urlDistortions": ({url, matchingBook}) => 
+        "urlDistortions": ({url, matchingBook}:expectedBook):[expectedReference] =>
             [{
                 url,
                 refObj: {
@@ -98,22 +118,22 @@ const chapterVerseTests = [
     },
     {
         "itDescription": "should handle well formatted reference without verse",
-        "urlDistortions": ({url, matchingBook}) => 
+        "urlDistortions": ({url, matchingBook}:expectedBook):[expectedReference] =>
             [wellFormattedUrlWithChapter({url, matchingBook})]
     },
     {
         "itDescription": "should handle reference missing verse",
-        "urlDistortions": ({url, matchingBook}) => 
+        "urlDistortions": ({url, matchingBook}:expectedBook):expectedReference[] =>
             badlyFormattedUrlWithChapter({url, matchingBook})
     },
     {
         "itDescription": "should handle well formatted reference with verse",
-        "urlDistortions": ({url, matchingBook}) => 
+        "urlDistortions": ({url, matchingBook}:expectedBook):[expectedReference] =>
             [wellFormattedUrlWithChapterAndVerse({url, matchingBook})]
     },
     {
         "itDescription": "should handle badly formatted reference with verse",
-        "urlDistortions": ({url, matchingBook}) => 
+        "urlDistortions": ({url, matchingBook}:expectedBook):[expectedReference] =>
             badlyFormattedUrlWithChapterAndVerse({url, matchingBook})
     }
 ]
@@ -121,16 +141,18 @@ const chapterVerseTests = [
 
 describe('ReferenceParser', () => {
     describe('parse reference urls', () => {
-        bookStringTests.forEach(t => {
-            describe(t.description, () => {
+        //Loop through each of my basic test cases running various
+        // distortions to check that obvious errors don't occur
+        bookNameTests.forEach(b => {
+            describe(b.description, () => {
                 chapterVerseTests.forEach(c => {
                     it(c.itDescription, () => {
-                        basicTestCases.forEach(({url, matchingBook}) => {
+                        basicTestCases.forEach(({url, matchingBook}:expectedBook) => {
                             const urlArray = c.urlDistortions({
-                                url: t.bookStringDistortion(url),
+                                url: b.bookNameDistortion(url),
                                 matchingBook
                             })
-                            urlArray.forEach(({ url, refObj }) => {
+                            urlArray.forEach(({ url, refObj }:expectedReference) => {
                                 parsingTest(url, refObj)
                             })
                         })
@@ -139,6 +161,7 @@ describe('ReferenceParser', () => {
             })
         })
     })
+
     it("should parse specific test cases", () => {
         const cases = [
             { "case": "2 Kings 5:3", "solution": {book: "2 Kings", chapter: 5, verse: 3} },
