@@ -26,6 +26,7 @@ const basicTestCases:expectedBook[] = [
     {"url": "Song Of Sol", "matchingBook":"Song of Songs"},
     {"url": "Songs Of Solomon", "matchingBook":"Song of Songs"},
     {"url": "Song Of Songs", "matchingBook":"Song of Songs"},
+    {"url": "canticles", "matchingBook":"Song of Songs"},
 ]
 
 const parsingTest = (parseStr:string, matchReference:referenceObject) => {
@@ -139,7 +140,7 @@ const chapterVerseTests = [
 ]
 
 
-describe('ReferenceParser', () => {
+describe('Basic Tests', () => {
     describe('parse reference urls', () => {
         //Loop through each of my basic test cases running various
         // distortions to check that obvious errors don't occur

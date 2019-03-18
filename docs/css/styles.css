@@ -1,0 +1,7 @@
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	background: url("../images/bck.jpg") bottom center no-repeat;
+	background-size: cover;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reference Parser</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/textbox.css">
+	<script src="build/app.js"></script>
+</head>
+<body>
+	<div class="Wrapper">
+		<div class="Input">
+			<input type="text" id="input" class="Input-text" placeholder="Verse Reference">
+			<label for="input" class="Input-label">Type a reference</label>
+		</div>
+	</div>
+	<script>
+		const rp = new ReferenceParser()
+		const $inputBox = document.querySelector("#input")
+		$inputBox.addEventListener("change", () => {
+			console.log(this)
+		})
+	</script>
+</body>
+</html>

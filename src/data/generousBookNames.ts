@@ -55,6 +55,7 @@ const generousBookNames: { [s:string]:string } = {
 	"songsofsolomon": "Song of Songs",
 	"songofsongs": "Song of Songs",
 	"canticum": "Song of Songs",
+	"canticles": "Song of Songs",
 	"ecclesiastes": "Ecclesiastes",
 	"qoheleth": "Ecclesiastes",
 	"lamentations": "Lamentations",
