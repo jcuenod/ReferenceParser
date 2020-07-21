@@ -21,6 +21,7 @@ const basicTestCases:expectedBook[] = [
     {"url": "2 Chronicles", "matchingBook":"2 Chronicles"},
     {"url": "1-Kgs", "matchingBook":"1 Kings"},
     {"url": "1-Kings", "matchingBook":"1 Kings"},
+    {"url": "I Kings", "matchingBook":"1 Kings"},
     {"url": "Reges II", "matchingBook":"2 Kings"},
     {"url": "Reges_II", "matchingBook":"2 Kings"},
     {"url": "Song Of Sol", "matchingBook":"Song of Songs"},

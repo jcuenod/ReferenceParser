@@ -24,9 +24,14 @@ class ReferenceParser {
         } : false
     }
 
-    private _matchBook = (urlBook:string):string|false => {
+	private _matchBook = (urlBook:string):string|false => {
+		// if there is an initial i/ii with a space, it's a number...
+		const numberified = urlBook
+				.replace(/^iii\b/i, "3")
+				.replace(/^ii\b/i, "2")
+				.replace(/^i\b/i, "1")
         // first see if we can map directly
-        const possibleKey = urlBook.replace(/[-_\ ]/g,"").toLowerCase()
+        const possibleKey = numberified.replace(/[-_\ ]/g,"").toLowerCase()
         const generousNameList = Object.keys(generousBookNames)
         if (generousNameList.indexOf(possibleKey) > -1) {
             return generousBookNames[possibleKey]
