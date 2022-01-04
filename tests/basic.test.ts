@@ -71,7 +71,7 @@ const badlyFormattedUrlWithChapter = ({url, matchingBook}:expectedBook) => {
 }
 const badlyFormattedUrlWithChapterAndVerse = ({url, matchingBook}:expectedBook) => {
     const verseBreaks = [":", "v", ".", " "]
-    return [].concat.apply([], verseBreaks.map(v => 
+    return verseBreaks.map(v => 
         badlyFormattedUrlWithChapter({url, matchingBook}).map(v2 => {
             const newRef = v2.refObj
             return {
@@ -83,7 +83,7 @@ const badlyFormattedUrlWithChapterAndVerse = ({url, matchingBook}:expectedBook) 
                 }
             }
         })
-    ))
+    ).flat()
 }
 
 const bookNameTests = [
@@ -120,7 +120,7 @@ const chapterVerseTests = [
     },
     {
         "itDescription": "should handle well formatted reference without verse",
-        "urlDistortions": ({url, matchingBook}:expectedBook):[expectedReference] =>
+        "urlDistortions": ({url, matchingBook}:expectedBook):expectedReference[] =>
             [wellFormattedUrlWithChapter({url, matchingBook})]
     },
     {
@@ -130,12 +130,12 @@ const chapterVerseTests = [
     },
     {
         "itDescription": "should handle well formatted reference with verse",
-        "urlDistortions": ({url, matchingBook}:expectedBook):[expectedReference] =>
+        "urlDistortions": ({url, matchingBook}:expectedBook):expectedReference[] =>
             [wellFormattedUrlWithChapterAndVerse({url, matchingBook})]
     },
     {
         "itDescription": "should handle badly formatted reference with verse",
-        "urlDistortions": ({url, matchingBook}:expectedBook):[expectedReference] =>
+        "urlDistortions": ({url, matchingBook}:expectedBook):expectedReference[] =>
             badlyFormattedUrlWithChapterAndVerse({url, matchingBook})
     }
 ]

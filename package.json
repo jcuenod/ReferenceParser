@@ -19,9 +19,9 @@
   "author": "James Cuénod",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^23.3.9",
-    "jest": "^23.6.0",
-    "ts-jest": "^23.10.5",
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.5",
+    "ts-jest": "^27.1.2",
     "typescript": "^3.1.6"
   },
   "jest": {
