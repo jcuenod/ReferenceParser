@@ -25,8 +25,14 @@ class ReferenceParser {
     }
 
 	private _matchBook = (urlBook:string):string|false => {
+        // This allows strings like IIKings => 2Kings (based on capital K, requires uppercase i)
+        const capitalsToDetermineInitialIAsNumber = /I{1,3}[A-Z][a-zA-Z]+/.test(urlBook) 
+            ? urlBook.replace(/^III/, "3")
+				.replace(/^II/, "2")
+				.replace(/^I/, "1")
+            : urlBook
 		// if there is an initial i/ii with a space, it's a number...
-		const numberified = urlBook
+		const numberified = capitalsToDetermineInitialIAsNumber
 				.replace(/^iii\b/i, "3")
 				.replace(/^ii\b/i, "2")
 				.replace(/^i\b/i, "1")
