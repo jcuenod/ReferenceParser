@@ -1,0 +1,82 @@
+[{
+    "name": "Matthew",
+    "forms": ["matt", "mt"]
+}, {
+    "name": "Mark",
+    "forms": ["mrk", "mar", "mk", "mr"]
+}, {
+    "name": "Luke",
+    "forms": ["luk", "lk"]
+}, {
+    "name": "John",
+    "forms": ["john", "joh", "jhn", "jn"]
+}, {
+    "name": "Acts",
+    "forms": ["act", "ac"]
+}, {
+    "name": "Romans",
+    "forms": ["rom", "ro", "rm"]
+}, {
+    "name": "1 Corinthians",
+    "forms": ["1corinthians", "1cor", "1co", "1stcor", "1stcorinthians", "firstcorinthians"]
+}, {
+    "name": "2 Corinthians",
+    "forms": ["2corinthians", "2cor", "2co", "2ndcor", "2ndcorinthians", "secondcorinthians"]
+}, {
+    "name": "Galatians",
+    "forms": ["gal", "ga"]
+}, {
+    "name": "Ephesians",
+    "forms": ["ephes", "eph"]
+}, {
+    "name": "Philippians",
+    "forms": ["phil", "php", "pp"]
+}, {
+    "name": "Colossians",
+    "forms": ["col", "co"]
+}, {
+    "name": "1 Thessalonians",
+    "forms": ["1thessalonians", "1thess", "1th", "1thes", "1stthess", "1stthessalonians", "firstthessalonians"]
+}, {
+    "name": "2 Thessalonians",
+    "forms": ["2thessalonians", "2thess", "2th", "2thes", "2ndthess", "2ndthessalonians", "secondthessalonians"]
+}, {
+    "name": "1 Timothy",
+    "forms": ["1timothy", "1tim", "1ti", "1sttim", "1sttimothy", "firsttim", "firsttimothy"]
+}, {
+    "name": "2 Timothy",
+    "forms": ["2timothy", "2tim", "2ti", "2ndtim", "2ndtimothy", "secondtim", "secondtimothy"]
+}, {
+    "name": "Titus",
+    "forms": ["titus", "tit", "ti"]
+}, {
+    "name": "Philemon",
+    "forms": ["philem", "phm", "pm"]
+}, {
+    "name": "Hebrews",
+    "forms": ["hebrews", "heb"]
+}, {
+    "name": "James",
+    "forms": ["james", "jas", "jm"]
+}, {
+    "name": "1 Peter",
+    "forms": ["1peter", "1pet", "1pe", "1pt", "1p", "1stpeter", "firstpeter"]
+}, {
+    "name": "2 Peter",
+    "forms": ["2peter", "2pet", "2pe", "2pt", "2p", "2ndpeter", "secondpeter"]
+}, {
+    "name": "1 John",
+    "forms": ["1john", "1jn", "1jo", "1joh", "1jhn", "1j", "1stjohn", "firstjohn"]
+}, {
+    "name": "2 John",
+    "forms": ["2john", "2jn", "2jo", "2joh", "2jhn", "2j", "2ndjohn", "secondjohn"]
+}, {
+    "name": "3 John",
+    "forms": ["3john", "3jn", "3jo", "3joh", "3jhn", "3j", "3rdjohn", "thirdjohn"]
+}, {
+    "name": "Jude",
+    "forms": ["jude", "jud", "jd"]
+}, {
+    "name": "Revelation",
+    "forms": ["rev", "re", "the revelation"]
+}]

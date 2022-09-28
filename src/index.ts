@@ -2,20 +2,20 @@ import bookDetails from './data/bookDetails'
 import generousBookNames from './data/generousBookNames'
 
 interface IReferenceObject {
-    book:string|null;
-    chapter:number|null;
-    verse:number|null;
+    book: string | null
+    chapter: number | null
+    verse: number | null
 }
 
 class ReferenceParser {
-    private defaults:IReferenceObject
+    private defaults: IReferenceObject
 
-    constructor({defaults = { book: null, chapter: null, verse: null }}:{defaults?: IReferenceObject}={}) {
+    constructor({ defaults = { book: null, chapter: null, verse: null } }: { defaults?: IReferenceObject } = {}) {
         let { book, chapter, verse } = defaults
         this.defaults = { book, chapter, verse }
     }
 
-    public parse(referenceString:string):IReferenceObject|false {
+    public parse(referenceString: string): IReferenceObject | false {
         const matches = referenceString.match(/((?:(?:\d)[^a-zA-Z\d\s:]*)?[a-zA-Z-_\s]+)([^a-zA-Z\d:]*(\d+)(\D*(\d+))?)?/)
         return matches ? {
             book: this._matchBook(matches[1]) || this.defaults.book,
@@ -24,55 +24,62 @@ class ReferenceParser {
         } : false
     }
 
-	private _matchBook = (urlBook:string):string|false => {
+    private _matchBook = (urlBook: string): string | false => {
         // This allows strings like IIKings => 2Kings (based on capital K, requires uppercase i)
-        const capitalsToDetermineInitialIAsNumber = /^I{1,3}[A-HJ-Z][a-z]+/.test(urlBook) 
-            ? urlBook.replace(/^III/, "3")
-				.replace(/^II/, "2")
-				.replace(/^I/, "1")
+        const capitalsToDetermineInitialIAsNumber = /^[IV]{1,3}[A-HJ-Z][a-z]+/.test(urlBook)
+            ? urlBook
+                .replace(/^VI/, "6")
+                .replace(/^V/, "5")
+                .replace(/^IV/, "4")
+                .replace(/^IIII/, "4") // In case someone doesn't understand roman numerals
+                .replace(/^III/, "3")
+                .replace(/^II/, "2")
+                .replace(/^I/, "1")
             : urlBook
-		// if there is an initial i/ii with a space, it's a number...
-		const numberified = capitalsToDetermineInitialIAsNumber
-				.replace(/^iii\b/i, "3")
-				.replace(/^ii\b/i, "2")
-				.replace(/^i\b/i, "1")
+        // if there is an initial i/ii with a space, it's a number...
+        const numberified = capitalsToDetermineInitialIAsNumber
+            .replace(/^vi\b/i, "6")
+            .replace(/^v\b/i, "5")
+            .replace(/^iv\b/i, "4")
+            .replace(/^iii\b/i, "3")
+            .replace(/^ii\b/i, "2")
+            .replace(/^i\b/i, "1")
         // first see if we can map directly
-        const possibleKey = numberified.replace(/[-_\ ]/g,"").toLowerCase()
-        const generousNameList = Object.keys(generousBookNames)
-        if (generousNameList.indexOf(possibleKey) > -1) {
-            return generousBookNames[possibleKey]
+
+        const possibleKey = numberified.replace(/[-_\ ]/g, "").toLowerCase()
+
+        const possibleMatches1 = generousBookNames.filter(b =>
+            b.forms.indexOf(possibleKey) > -1
+        )
+        if (possibleMatches1.length > 0) {
+            // It's possible that there is more than one match here,
+            // If that happens, we just return the first one.
+            // Do a better job of not having conflicting forms...
+            return possibleMatches1[0].name
         }
 
-        // now try use regex to guess (return on first match)
-        const bookNames = bookDetails.map(b => b.name)
-        // let's try a regex on the starting characters of book names
-        const r1 = new RegExp(`^${possibleKey}.*`, "i")
-        const possibleMatch = bookNames.reduce((a:string|false, v:string) => {
-            if (a) return a
-            return r1.test(v) ? v : a
-        }, false)
-        if (possibleMatch) return possibleMatch
-        // and if that didn't work, let's try on the generous booknames...
-        const possibleMatch2 = Object.keys(generousBookNames).reduce((a:string|false, v:string) => {
-            if (a) return a
-            return r1.test(v) ? generousBookNames[v] : a
-        }, false)
-        if (possibleMatch2) return possibleMatch2
-
-        // this is a pretty promiscuous guess but it works on stuff like "1kgs"
+        const possibleMatches2 = generousBookNames.filter(b =>
+            b.forms.filter(f => f.startsWith(possibleKey)).length > 0
+        )
+        if (possibleMatches2.length > 0) {
+            // It's possible that there is more than one match here,
+            // If that happens, we just return the first one.
+            // Do a better job of not having conflicting forms...
+            return possibleMatches2[0].name
+        }
         const urlArray = possibleKey.split("")
-        const r2 = new RegExp("^" + urlArray.join(".*"), "i")
-        const possibleMatch3 = bookNames.reduce((a:string|false, v:string) => {
-            if (a) return a
-            return r2.test(v) ? v : a
-        }, false)
-        if (possibleMatch3) return possibleMatch3
-        // Okay, we're really having a hard time with this one,
-        // we'll have a last ditch try with generous book names
-        return Object.keys(generousBookNames).reduce((a:string|false, v:string) => {
-            if (a) return a
-            return r2.test(v) ? generousBookNames[v] : a
-        }, false)
+        const regex = new RegExp("^" + urlArray.join(".*"), "i")
+        const possibleMatches3 = generousBookNames.filter(b =>
+            b.forms.filter(f => regex.test(f)).length > 0
+        )
+        if (possibleMatches3.length > 0) {
+            // It's possible that there is more than one match here,
+            // If that happens, we just return the first one.
+            // Do a better job of not having conflicting forms...
+            return possibleMatches3[0].name
+        }
+
+        return false
     }
 }
 

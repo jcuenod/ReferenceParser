@@ -1,0 +1,66 @@
+[{
+    "name": "Tobit",
+    "forms": ["tobit", "tob", "tb"]
+}, {
+    "name": "Judith",
+    "forms": ["judith", "jdth", "jdt", "jth"]
+}, {
+    "name": "Additions to Esther",
+    "forms": ["additionstoesther", "addesth", "addes", "restofesther", "aes", "esthergreek", "greekesther", "esg"]
+}, {
+    "name": "Wisdom of Solomon",
+    "forms": ["wisdomofsolomon", "wisdsol", "wisdofsol", "wis", "ws", "wisdom"]
+}, {
+    "name": "Sirach",
+    "forms": ["sirach", "sir", "ecclesiasticus", "ecclus"]
+}, {
+    "name": "Baruch",
+    "forms": ["baruch", "bar"]
+}, {
+    "name": "Letter of Jeremiah",
+    "forms": ["letterofjeremiah", "letjer", "ltrjer", "lje"]
+}, {
+    "name": "Song of Three Youths",
+    "forms": ["songofthreeyouths", "songofthree", "s3y", "sg3", "sgthree", "song3", "songthr", "praz", "prayerofazariah", "azariah", "songofthethreeholychildren", "songofthreejews", "thesongofthethreeholychildren", "songofthr", "songofthreechildren"]
+}, {
+    "name": "Susanna",
+    "forms": ["susanna", "sus"]
+}, {
+    "name": "Bel and the Dragon",
+    "forms": ["belandthedragon", "bel"]
+}, {
+    "name": "1 Maccabees",
+    "forms": ["1macc", "1ma", "1mac", "1maccabees", "1stmaccabees", "firstmaccabees"]
+}, {
+    "name": "2 Maccabees",
+    "forms": ["2macc", "2ma", "2mac", "2maccabees", "2ndmaccabees", "secondmaccabees"]
+}, {
+    "name": "1 Esdras",
+    "forms": ["1esdras", "1esdr", "1es", "1esd", "1stesdras", "firstesdras"],
+    "extra": ["Greek"]
+}, {
+    "name": "Prayer of Manasseh",
+    "forms": ["prayerofmanasseh", "profman", "prman", "pma", "prayerofmanasses"]
+}, {
+    "name": "Psalm 151",
+    "forms": ["psalm151", "ps151", "pss151", "additionalpsalm", "addpsalm", "addps"]
+}, {
+    "name": "3 Maccabees",
+    "forms": ["3macc", "3ma", "3mac", "3rdmaccabees", "thirdmaccabees"]
+}, {
+    "name": "2 Esdras",
+    "forms": ["2esdras", "2esdr", "2es", "2esd", "2ndesdras", "secondesdras"],
+    "extra": ["Latin"]
+}, {
+    "name": "4 Maccabees",
+    "forms": ["4macc", "4ma", "4mac", "4maccabees", "4thmaccabees", "fourthmaccabees"]
+}, {
+    "name": "Ode",
+    "forms": ["ode"]
+}, {
+    "name": "Psalms of Solomon",
+    "forms": ["psalmsofsolomon", "pssol", "pssolomon", "psssolomon", "psalmssolomon"]
+}, {
+    "name": "Epistle to the Laodiceans",
+    "forms": ["laodiceans", "laod", "eplaod", "epistlaodiceans", "epistlelaodiceans", "epistletolaodiceans"]
+}]

@@ -28,6 +28,7 @@ const basicTestCases:expectedBook[] = [
     {"url": "Songs Of Solomon", "matchingBook":"Song of Songs"},
     {"url": "Song Of Songs", "matchingBook":"Song of Songs"},
     {"url": "canticles", "matchingBook":"Song of Songs"},
+    {"url": "cantle", "matchingBook":"Song of Songs"},
 ]
 
 const parsingTest = (parseStr:string, matchReference:referenceObject) => {

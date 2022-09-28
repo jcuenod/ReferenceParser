@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Genesis",
+        "forms": ["genesis", "gen", "ge", "gn"]
+    }, {
+        "name": "Exodus",
+        "forms": ["exodus", "exod", "exo", "ex"]
+    }, {
+        "name": "Leviticus",
+        "forms": ["leviticus", "lev", "le", "lv"]
+    }, {
+        "name": "Numbers",
+        "forms": ["numbers", "num", "nu", "nm", "nb", "numeri"]
+    }, {
+        "name": "Deuteronomy",
+        "forms": ["deuteronomy", "deut", "de", "dt", "deuteronomium"]
+    }, {
+        "name": "Joshua",
+        "forms": ["joshua", "josh", "jos", "jsh"]
+    }, {
+        "name": "Judges",
+        "forms": ["judges", "judg", "jdg", "jg", "jdgs", "judices"]
+    }, {
+        "name": "Ruth",
+        "forms": ["ruth", "rth", "ru"]
+    }, {
+        "name": "1 Samuel",
+        "forms": ["1samuel", "1sam", "1sa", "1s", "1sm", "1stsam", "1stsamuel", "firstsam", "firstsamuel", "samueli", "1kgdms", "1kingdoms"]
+    }, {
+        "name": "2 Samuel",
+        "forms": ["2samuel", "2sam", "2sa", "2s", "2sm", "2ndsam", "2ndsamuel", "secondsam", "secondsamuel", "samuelii", "2kgdms", "2kingdoms"]
+    }, {
+        "name": "1 Kings",
+        "forms": ["1kings", "1kgs", "1ki", "1k", "1kin", "1stkgs", "1stkings", "firstkgs", "firstkings", "regesi", "1reges"]
+    }, {
+        "name": "2 Kings",
+        "forms": ["2kings", "2kgs", "2ki", "2k",  "2kin", "2ndkgs", "2ndkings", "secondkgs", "second ings", "regesii", "2reges"]
+    }, {
+        "name": "1 Chronicles",
+        "forms": ["1chronicles", "1chron", "1ch", "1chr", "1stchron", "1stchronicles", "firstchron", "firstchronicles", "chronicai"]
+    }, {
+        "name": "2 Chronicles",
+        "forms": ["2chronicles", "2chron", "2ch", "2chr", "2ndchron", "2ndchronicles", "secondchron", "secondchronicles", "chronicaii"]
+    }, {
+        "name": "Ezra",
+        "forms": ["ezra", "ezr", "ez", "esra"]
+    }, {
+        "name": "Nehemiah",
+        "forms": ["nehemiah", "neh", "ne"]
+    }, {
+        "name": "Esther",
+        "forms": ["esther", "esth", "es"],
+        "extra": ["Hebrew"]
+    }, {
+        "name": "Job",
+        "forms": ["job", "jb", "Iob"]
+    }, {
+        "name": "Psalms",
+        "forms": ["psalms", "psalm", "pslm", "ps", "psa", "psm", "pss", "psalmi"]
+    }, {
+        "name": "Proverbs",
+        "forms": ["proverbs", "prov", "pro", "pr", "prv", "proverbia"]
+    }, {
+        "name": "Ecclesiastes",
+        "forms": ["ecclesiastes", "eccles", "eccle", "ecc", "ec", "qoh", "qoheleth"]
+    }, {
+        "name": "Song of Songs",
+        "forms": ["songofsolomon", "songofsongs", "songsofsolomon", "songsofsongs", "song", "so", "sos", "sng", "canticleofcanticles", "canticles", "cant", "canticum"]
+    }, {
+        "name": "Isaiah",
+        "forms": ["isaiah", "isa", "is", "jesaia"]
+    }, {
+        "name": "Jeremiah",
+        "forms": ["jeremiah", "jer", "je", "jr", "jeremia"]
+    }, {
+        "name": "Lamentations",
+        "forms": ["lamentations", "lam", "la", "threni"]
+    }, {
+        "name": "Ezekiel",
+        "forms": ["ezekiel", "ezek", "eze", "ezk", "ezechiel"]
+    }, {
+        "name": "Daniel",
+        "forms": ["daniel", "dan", "da", "dn"],
+        "extra": ["Hebrew"]
+    }, {
+        "name": "Hosea",
+        "forms": ["hosea", "hos", "ho"]
+    }, {
+        "name": "Joel",
+        "forms": ["joel", "joe", "jl"]
+    }, {
+        "name": "Amos",
+        "forms": ["amos", "am"]
+    }, {
+        "name": "Obadiah",
+        "forms": ["obadiah", "obad", "ob"]
+    }, {
+        "name": "Jonah",
+        "forms": ["jonah", "jnh", "jon"]
+    }, {
+        "name": "Micah",
+        "forms": ["micah", "mic", "mc", "micha"]
+    }, {
+        "name": "Nahum",
+        "forms": ["nahum", "nah", "na"]
+    }, {
+        "name": "Habakkuk",
+        "forms": ["habakkuk", "hab", "hb", "habakuk"]
+    }, {
+        "name": "Zephaniah",
+        "forms": ["zephaniah", "zeph", "zep", "zp"]
+    }, {
+        "name": "Haggai",
+        "forms": ["haggai", "hag", "hg"]
+    }, {
+        "name": "Zechariah",
+        "forms": ["zechariah", "zech", "zec", "zc", "sacharia"]
+    }, {
+        "name": "Malachi",
+        "forms": ["malachi", "mal", "ml", "maleachi"]
+    }
+]

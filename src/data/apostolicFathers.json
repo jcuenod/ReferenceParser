@@ -1,0 +1,62 @@
+[
+    {
+        "name": "1Clement",
+        "forms": ["1clement", "1cl", "1clem"]
+    },
+    {
+        "name": "2Clement",
+        "forms": ["2clement", "2cl", "2clem"]
+    },
+    {
+        "name": "Barnabas",
+        "forms": ["barnabas"]
+    },
+    {
+        "name": "Didache",
+        "forms": ["didache"]
+    },
+    {
+        "name": "Diognetus",
+        "forms": ["diognetus", "diog"]
+    },
+    {
+        "name": "Hermas",
+        "forms": ["hermas", "herm"]
+    },
+    {
+        "name": "Ignatius to the Ephesians",
+        "forms": ["ignatiustotheephesians", "ignatiusephesians", "igneph"]
+    },
+    {
+        "name": "Ignatius to the Magnesians",
+        "forms": ["ignatiustothemagnesians", "ignatiusmagnesians", "ignmag"]
+    },
+    {
+        "name": "Ignatius to the Philadelphians",
+        "forms": ["ignatiustothephiladelphians", "ignatiusphila", "ignphla"]
+    },
+    {
+        "name": "Ignatius to Polycarp",
+        "forms": ["ignatiuspolycarp", "ignatiustopolycarp", "ignpoly"]
+    },
+    {
+        "name": "Ignatius to the Romans",
+        "forms": ["ignatiustotheromans", "ignatiusromans", "ignrom"]
+    },
+    {
+        "name": "Ignatius to the Smyrneans",
+        "forms": ["ignatiustothesmyrneans", "ignatiussmyrneans", "ignsmyrn", "epistleofignatiustothesmyrnaeans"]
+    },
+    {
+        "name": "Ignatius to the Trallians",
+        "forms": ["ignatiustothetrallians", "igntral", "epistleofignatiustothetrallians"]
+    },
+    {
+        "name": "Martyrdom of Polycarp",
+        "forms": ["martyrdomofpolycarp", "martpoly", "letterofthesmyrnaeans", "martyrdom", "epistleofthesmyrnaeans"]
+    },
+    {
+        "name": "Epistle of Polycarp",
+        "forms": ["epistleofpolycarp", "polycarp", "letterofpolycarp"]
+    }
+]
