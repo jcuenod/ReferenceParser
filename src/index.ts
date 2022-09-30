@@ -1,4 +1,4 @@
-import bookDetails from './data/bookDetails'
+//import bookDetails from './data/bookDetails.'
 import generousBookNames from './data/generousBookNames'
 
 interface IReferenceObject {
@@ -25,9 +25,10 @@ class ReferenceParser {
     }
 
     private _matchBook = (urlBook: string): string | false => {
+        const normedWordBreaks = urlBook.replace(/[_-]/g, " ")
         // This allows strings like IIKings => 2Kings (based on capital K, requires uppercase i)
         const capitalsToDetermineInitialIAsNumber = /^[IV]{1,3}[A-HJ-Z][a-z]+/.test(urlBook)
-            ? urlBook
+            ? normedWordBreaks
                 .replace(/^VI/, "6")
                 .replace(/^V/, "5")
                 .replace(/^IV/, "4")
@@ -35,7 +36,7 @@ class ReferenceParser {
                 .replace(/^III/, "3")
                 .replace(/^II/, "2")
                 .replace(/^I/, "1")
-            : urlBook
+            : normedWordBreaks
         // if there is an initial i/ii with a space, it's a number...
         const numberified = capitalsToDetermineInitialIAsNumber
             .replace(/^vi\b/i, "6")

@@ -167,6 +167,8 @@ describe('Basic Tests', () => {
 
     it("should parse specific test cases", () => {
         const cases = [
+            { "case": "i_clement 5.1", "solution": {book: "1 Clement", chapter: 5, verse: 1} },
+            { "case": "ii_clement", "solution": {book: "2 Clement", chapter: null, verse: null} },
             { "case": "2 Kings 5:3", "solution": {book: "2 Kings", chapter: 5, verse: 3} },
             { "case": "pss4.2", "solution": {book: "Psalms", chapter: 4, verse: 2} },
             { "case": "song of sol 10", "solution": {book: "Song of Songs", chapter: 10, verse: null} },
