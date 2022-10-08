@@ -184,6 +184,7 @@ describe('Basic Tests', () => {
             { "case": "/Reges_II/24", "solution": { book: "2 Kings", chapter: 24, verse: null } },
             { "case": "/Samuel_II/12", "solution": { book: "2 Samuel", chapter: 12, verse: null } },
             { "case": "/Psalmi/1", "solution": { book: "Psalms", chapter: 1, verse: null } },
+            { "case": "IgnRome 2:4", "solution": { book: "Ignatius to the Romans", chapter: 2, verse: 4 } },
         ]
         cases.forEach(c => {
             const s = rp.parse(c.case)
