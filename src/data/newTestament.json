@@ -1,21 +1,21 @@
 [{
     "name": "Matthew",
-    "forms": ["matt", "mt"]
+    "forms": ["matthew", "matt", "mt"]
 }, {
     "name": "Mark",
-    "forms": ["mrk", "mar", "mk", "mr"]
+    "forms": ["mark", "mrk", "mar", "mk", "mr"]
 }, {
     "name": "Luke",
-    "forms": ["luk", "lk"]
+    "forms": ["luke", "luk", "lk"]
 }, {
     "name": "John",
     "forms": ["john", "joh", "jhn", "jn"]
 }, {
     "name": "Acts",
-    "forms": ["act", "ac"]
+    "forms": ["acts", "act", "ac"]
 }, {
     "name": "Romans",
-    "forms": ["rom", "ro", "rm"]
+    "forms": ["romans", "rom", "ro", "rm"]
 }, {
     "name": "1 Corinthians",
     "forms": ["1corinthians", "1cor", "1co", "1stcor", "1stcorinthians", "firstcorinthians"]
@@ -24,16 +24,16 @@
     "forms": ["2corinthians", "2cor", "2co", "2ndcor", "2ndcorinthians", "secondcorinthians"]
 }, {
     "name": "Galatians",
-    "forms": ["gal", "ga"]
+    "forms": ["galatians", "gal", "ga"]
 }, {
     "name": "Ephesians",
-    "forms": ["ephes", "eph"]
+    "forms": ["ephesians", "ephes", "eph"]
 }, {
     "name": "Philippians",
-    "forms": ["phil", "php", "pp"]
+    "forms": ["philippians", "phil", "php", "pp"]
 }, {
     "name": "Colossians",
-    "forms": ["col", "co"]
+    "forms": ["colossians", "col", "co"]
 }, {
     "name": "1 Thessalonians",
     "forms": ["1thessalonians", "1thess", "1th", "1thes", "1stthess", "1stthessalonians", "firstthessalonians"]
@@ -51,7 +51,7 @@
     "forms": ["titus", "tit", "ti"]
 }, {
     "name": "Philemon",
-    "forms": ["philem", "phm", "pm"]
+    "forms": ["philemon", "philem", "phm", "pm"]
 }, {
     "name": "Hebrews",
     "forms": ["hebrews", "heb"]
@@ -78,5 +78,5 @@
     "forms": ["jude", "jud", "jd"]
 }, {
     "name": "Revelation",
-    "forms": ["rev", "re", "the revelation"]
+    "forms": ["revelation", "rev", "re", "the revelation"]
 }]
