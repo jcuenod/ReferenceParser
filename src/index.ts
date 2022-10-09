@@ -1,4 +1,3 @@
-//import bookDetails from './data/bookDetails.'
 import generousBookNames from './data/generousBookNames'
 
 interface IReferenceObject {

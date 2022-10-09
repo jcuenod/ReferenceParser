@@ -1,7 +1,7 @@
-const oldTestament = require("./oldTestament.json")
-const newTestament = require("./newTestament.json")
-const deuterocanonical = require("./deuterocanonical.json")
-const apostolicFathers = require("./apostolicFathers.json")
+import oldTestament from "./oldTestament.json"
+import newTestament from "./newTestament.json"
+import deuterocanonical from "./deuterocanonical.json"
+import apostolicFathers from "./apostolicFathers.json"
 
 type bookWithNameForms = {
 	name: string
