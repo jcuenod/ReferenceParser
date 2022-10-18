@@ -15,7 +15,7 @@ class ReferenceParser {
     }
 
     public parse(referenceString: string): IReferenceObject | false {
-        const matches = referenceString.match(/((?:(?:\d)[^a-zA-Z\d\s:]*)?[a-zA-Z-_\s]+)([^a-zA-Z\d:]*(\d+)(\D*(\d+))?)?/)
+        const matches = referenceString.match(/((?:(?:\d)[^a-zA-Z\d\s:]*)?[a-zA-Z-_\s\.]+)([^a-zA-Z\d:]*(\d+)(\D*(\d+))?)?/)
         return matches ? {
             book: this._matchBook(matches[1]) || this.defaults.book,
             chapter: matches[3] ? +matches[3] : this.defaults.chapter,
@@ -67,16 +67,29 @@ class ReferenceParser {
             // Do a better job of not having conflicting forms...
             return possibleMatches2[0].name
         }
+
+        // we're going to insert one wildcard and move it backward through and then add another...
+        // const possibleMatches3 = generousBookNames
+        //     .filter(b =>
+        //         b.forms.filter(f => f.startsWith(possibleKey)).length > 0
+        //     )
+        // if (possibleMatches3.length > 0) {
+        //     // It's possible that there is more than one match here,
+        //     // If that happens, we just return the first one.
+        //     // Do a better job of not having conflicting forms...
+        //     return possibleMatches3[0].name
+        // }
+
         const urlArray = possibleKey.split("")
         const regex = new RegExp("^" + urlArray.join(".*"), "i")
-        const possibleMatches3 = generousBookNames.filter(b =>
+        const possibleMatches4 = generousBookNames.filter(b =>
             b.forms.filter(f => regex.test(f)).length > 0
         )
-        if (possibleMatches3.length > 0) {
+        if (possibleMatches4.length > 0) {
             // It's possible that there is more than one match here,
             // If that happens, we just return the first one.
             // Do a better job of not having conflicting forms...
-            return possibleMatches3[0].name
+            return possibleMatches4[0].name
         }
 
         return false
